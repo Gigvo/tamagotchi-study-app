@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { ShoppingBag, Star, Heart, Zap, Brain } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 
 interface Product {
   id: string;
@@ -25,12 +26,12 @@ const mockProducts: Product[] = [
 ];
 
 export default function ShopPage() {
-  const [points] = useState(500);
+  const { xp } = useApp();
   const [cart, setCart] = useState<Product[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const addToCart = (product: Product) => {
-    if (points >= product.price) {
+    if (xp >= product.price) {
       setCart([...cart, product]);
     }
   };
@@ -62,7 +63,7 @@ export default function ShopPage() {
             <p className="text-gray-600">Buy items for your Tamagotchi</p>
             <div className="flex items-center gap-1 bg-yellow-100 px-3 py-1 rounded-full">
               <Star className="h-4 w-4 text-yellow-500 fill-current" />
-              <span className="font-bold">{points}</span>
+              <span className="font-bold">{xp}</span>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@ export default function ShopPage() {
         {/* Products Grid */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {filteredProducts.map((product) => {
-            const canBuy = points >= product.price;
+            const canBuy = xp >= product.price;
             const effectIcon = {
               happiness: <Heart className="h-4 w-4 text-pink-500" />,
               energy: <Zap className="h-4 w-4 text-yellow-500" />,
