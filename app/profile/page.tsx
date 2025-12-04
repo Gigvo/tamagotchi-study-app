@@ -32,11 +32,11 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 font-sans">
+    <div className="min-h-screen bg-gray-200 font-sans">
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <h1 className="font-bold text-4xl md:text-5xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="font-bold text-4xl md:text-5xl text-black">
             My Profile
           </h1>
           <Link href="/">
@@ -49,37 +49,38 @@ export default function Profile() {
         {/* Profile Card */}
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-6">
           {/* Username Section */}
-          <div className="flex items-center justify-between mb-8 pb-8 border-b-2 border-gray-100">
-            <div className="flex items-center gap-4">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+          <div className="flex items-center max-md:flex-col justify-between mb-8 pb-8 border-b-2 border-gray-100">
+            <div className="flex items-center flex-wrap justify-center gap-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg">
                 {username.charAt(0).toUpperCase()}
               </div>
-              <div>
+              <div className="flex flex-wrap">
                 {!isEditingUsername ? (
                   <>
                     <h2 className="text-3xl font-bold text-gray-800">
                       {username}
                     </h2>
-                    <p className="text-gray-500">Study Companion</p>
                   </>
                 ) : (
                   <input
                     type="text"
                     value={tempUsername}
                     onChange={(e) => setTempUsername(e.target.value)}
-                    onKeyPress={(e) => e.key === "Enter" && handleSaveUsername()}
-                    className="text-2xl font-bold border-2 border-purple-300 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-600"
+                    onKeyPress={(e) =>
+                      e.key === "Enter" && handleSaveUsername()
+                    }
+                    className="text-2xl font-bold border-2 border-black "
                     placeholder="Enter your name"
                     autoFocus
                   />
                 )}
               </div>
             </div>
-            <div>
+            <div className="mt-4">
               {!isEditingUsername ? (
                 <button
                   onClick={handleEditUsername}
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+                  className="bg-blue-700 hover:bg-blue-800 hover:scale-105 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
                 >
                   Edit Name
                 </button>
@@ -163,7 +164,7 @@ export default function Profile() {
               </div>
               <div className="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full transition-all duration-500"
+                  className="bg-green-600 h-full rounded-full transition-all duration-500"
                   style={{
                     width:
                       totalTasks > 0
