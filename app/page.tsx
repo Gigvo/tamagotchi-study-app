@@ -1,3 +1,4 @@
+// /app/page.tsx - Updated with just new features
 "use client";
 
 import Image from "next/image";
@@ -79,6 +80,76 @@ export default function Home() {
               {streak === 1 ? "day in a row" : "days in a row"}
             </p>
           </div>
+        </div>
+
+        {/* Shop & Inventory Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {/* Shop Card */}
+          <Link href="/shop">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-blue-200 hover:border-blue-300 cursor-pointer">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">🛍️ Shop</h3>
+                  <p className="text-gray-600">Buy items for your pet</p>
+                </div>
+                <div className="text-3xl">🛒</div>
+              </div>
+              <div className="mt-3 text-sm text-gray-500">
+                Use your {xp} XP to buy outfits & food
+              </div>
+            </div>
+          </Link>
+
+          {/* Inventory Card */}
+          <Link href="/inventory">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-300 cursor-pointer">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">📦 Inventory</h3>
+                  <p className="text-gray-600">Manage your items</p>
+                </div>
+                <div className="text-3xl">🎒</div>
+              </div>
+              <div className="mt-3 text-sm text-gray-500">
+                Equip outfits & use items
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Friends & Feed Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {/* Friends Card */}
+          <Link href="/friends">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-purple-200 hover:border-purple-300 cursor-pointer">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">👥 Friends</h3>
+                  <p className="text-gray-600">Study together</p>
+                </div>
+                <div className="text-3xl">🤝</div>
+              </div>
+              <div className="mt-3 text-sm text-gray-500">
+                See friends' progress & pets
+              </div>
+            </div>
+          </Link>
+
+          {/* Feed Card */}
+          <Link href="/feed">
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-yellow-200 hover:border-yellow-300 cursor-pointer">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">📰 Activity Feed</h3>
+                  <p className="text-gray-600">Stay updated</p>
+                </div>
+                <div className="text-3xl">📱</div>
+              </div>
+              <div className="mt-3 text-sm text-gray-500">
+                Recent activities & achievements
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Action Buttons */}
