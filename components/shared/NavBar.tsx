@@ -1,18 +1,27 @@
-'use client';
+"use client";
 
-import { Home, ShoppingBag, Package, Users, Rss } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {
+  Home,
+  ShoppingBag,
+  Package,
+  Users,
+  User,
+  ListTodo,
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Home', icon: Home },
-    { href: '/shop', label: 'Shop', icon: ShoppingBag },
-    { href: '/inventory', label: 'Inventory', icon: Package },
-    { href: '/friends', label: 'Friends', icon: Users },
-    { href: '/feed', label: 'Feed', icon: Rss },
+    { href: "/inventory", label: "Inventory", icon: Package },
+    { href: "/shop", label: "Shop", icon: ShoppingBag },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/task", label: "task", icon: ListTodo },
+
+    { href: "/friends", label: "Friends", icon: Users },
+    { href: "/profile", label: "Profile", icon: User },
   ];
 
   return (
@@ -27,7 +36,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center justify-center w-16 h-16 ${
-                isActive ? 'text-purple-600' : 'text-gray-500'
+                isActive ? "text-purple-600" : "text-gray-500"
               }`}
             >
               <Icon className="h-6 w-6" />

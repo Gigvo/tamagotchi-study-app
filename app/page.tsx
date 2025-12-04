@@ -16,7 +16,7 @@ export default function Home() {
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="font-bold text-5xl md:text-6xl bg-linear-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-2">
-            Hello, {username}!
+            Hello, <span suppressHydrationWarning>{username}</span>!
           </h1>
           <p className="text-gray-600 text-lg">
             Ready to learn and grow together?
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* Shop Card */}
           <Link href="/shop">
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-blue-200 hover:border-blue-300 cursor-pointer">
+            <div className="bg-linear-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-blue-200 hover:border-blue-300 cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">🛍️ Shop</h3>
@@ -87,10 +87,12 @@ export default function Home() {
 
           {/* Inventory Card */}
           <Link href="/inventory">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-300 cursor-pointer">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-300 cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">📦 Inventory</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    📦 Inventory
+                  </h3>
                   <p className="text-gray-600">Manage your items</p>
                 </div>
                 <div className="text-3xl">🎒</div>
@@ -106,26 +108,30 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* Friends Card */}
           <Link href="/friends">
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-purple-200 hover:border-purple-300 cursor-pointer">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-purple-200 hover:border-purple-300 cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">👥 Friends</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    👥 Friends
+                  </h3>
                   <p className="text-gray-600">Study together</p>
                 </div>
                 <div className="text-3xl">🤝</div>
               </div>
               <div className="mt-3 text-sm text-gray-500">
-                See friends' progress & pets
+                See friends&apos; progress & pets
               </div>
             </div>
           </Link>
 
           {/* Feed Card */}
           <Link href="/feed">
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-yellow-200 hover:border-yellow-300 cursor-pointer">
+            <div className="bg-linear-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border-2 border-yellow-200 hover:border-yellow-300 cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">📰 Activity Feed</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    📰 Activity Feed
+                  </h3>
                   <p className="text-gray-600">Stay updated</p>
                 </div>
                 <div className="text-3xl">📱</div>
