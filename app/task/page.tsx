@@ -80,12 +80,12 @@ export default function Task() {
   const completedTasks = tasks.filter((task) => task.completed);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 font-sans">
+    <div className="min-h-screen bg-gray-200 font-sans">
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="font-bold text-4xl md:text-5xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+            <h1 className="font-bold text-4xl md:text-5xl text-black mb-2">
               Your Tasks
             </h1>
             <p className="text-gray-600">
@@ -114,7 +114,7 @@ export default function Task() {
         {!showAddForm && (
           <button
             onClick={() => setShowAddForm(true)}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all mb-6"
+            className="w-full bg-green-700 text-white font-bold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all mb-6"
           >
             <span className="text-lg">+ Add New Task</span>
           </button>
@@ -237,7 +237,8 @@ export default function Task() {
             <div className="space-y-3">
               {incompleteTasks.map((task) => {
                 // Handle old tasks without timer fields
-                const hasTimer = task.createdAt && task.minimumTime !== undefined;
+                const hasTimer =
+                  task.createdAt && task.minimumTime !== undefined;
                 const timeRemaining = hasTimer ? getTimeRemaining(task) : 0;
                 const isReady = hasTimer ? canComplete(task) : true;
                 return (
